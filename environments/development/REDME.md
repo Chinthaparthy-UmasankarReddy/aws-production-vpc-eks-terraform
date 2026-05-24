@@ -1,5 +1,5 @@
 
-![JioMart AWS Infrastructure Architecture](./assets/architecture-diagram.png)
+![JioMart AWS Infrastructure Architecture](./images/architecture-diagram.png)
 
 
 # 🛠️ JioMart Infrastructure - Development Environment Playbook

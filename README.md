@@ -104,7 +104,6 @@ terraform destroy -auto-approve
 
 ```
 
-```
 
 
-* **Tech Tags (Topics):** `terraform`, `aws-eks`, `aws-vpc`, `aws-rds`, `infrastructure-as-code`, `devops`, `multi-environment`, `platform-engineering`
+**Tech Tags (Topics):** `terraform`, `aws-eks`, `aws-vpc`, `aws-rds`, `infrastructure-as-code`, `devops`, `multi-environment`, `platform-engineering`

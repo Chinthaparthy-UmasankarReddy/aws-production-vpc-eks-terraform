@@ -1,0 +1,26 @@
+# Ignore local Terraform caches & plugins
+**/.terraform/
+*.terraform*
+
+# Ignore state history files (since we use the S3 backend)
+*.tfstate
+*.tfstate.*
+
+# Ignore active execution plans
+*.tfplan
+*.binary
+
+# Ignore sensitive credential variables
+**/*.tfvars
+**/*.tfvars.json
+
+# Ignore local secret overrides
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore CLI configuration logs
+.terraformrc
+terraform.rc
+crash.log

@@ -1,13 +1,6 @@
----
 
-<p align="center">
-  <img src="./assets/architecture-diagram.png" width="700" alt="Architecture Diagram">
-</p>
+![JioMart AWS Infrastructure Architecture](./assets/architecture-diagram.png)
 
-
----
-
-```markdown
 # 🛠️ JioMart Infrastructure - Development Environment Playbook
 
 ## 📋 Overview
@@ -122,11 +115,9 @@ To eliminate active cloud run rates at the end of feature engineering or sprint 
 ```bash
 terraform destroy -auto-approve
 
-```
+---
 
-```
-<img src="./images/success.png" width="600" alt="Architecture Diagram">
-<img src="./images/dev-cluster.png" width="600" alt="Architecture Diagram">
-<img src="./images/node-group.png" width="600" alt="Architecture Diagram">
-<img src="./images/destroy.png" width="600" alt="Architecture Diagram">
-<img src="./images/destroy-completed.png" width="600" alt="Architecture Diagram">
+![JioMart AWS Infrastructure creation ](./images/success.png)
+
+
+

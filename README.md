@@ -1,9 +1,7 @@
-
-
-```markdown
 # Multi-Environment AWS Infrastructure Architecture via Modular Terraform
 
 ## 🏗️ Architecture Design Overview
+
 ![JioMart AWS Infrastructure Architecture](./assets/jio-mart-architecture.png)
 
 

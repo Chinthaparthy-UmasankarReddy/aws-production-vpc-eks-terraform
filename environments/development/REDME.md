@@ -1,6 +1,7 @@
 
 ![JioMart AWS Infrastructure Architecture](./assets/architecture-diagram.png)
 
+
 # 🛠️ JioMart Infrastructure - Development Environment Playbook
 
 ## 📋 Overview
@@ -114,10 +115,4 @@ To eliminate active cloud run rates at the end of feature engineering or sprint 
 
 ```bash
 terraform destroy -auto-approve
-
----
-
-![JioMart AWS Infrastructure creation ](./images/success.png)
-
-
 

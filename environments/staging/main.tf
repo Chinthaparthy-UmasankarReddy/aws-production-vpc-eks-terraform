@@ -1,12 +1,12 @@
 module "vpc" {
-  source             = "../../modules/vpc"
-  env                = "staging"
-  vpc_name           = "jiomart-staging-vpc"
-  vpc_cidr           = "10.20.0.0/16" 
-  private_subnets    = ["10.20.1.0/24", "10.20.2.0/24", "10.20.3.0/24"]
-  public_subnets     = ["10.20.101.0/24", "10.20.102.0/24", "10.20.103.0/24"]
-  database_subnets   = ["10.20.201.0/24", "10.20.202.0/24"]
-  is_production      = true # We want HA NAT Gateways in Staging too
+  source           = "../../modules/vpc"
+  env              = var.env
+  vpc_name         = "jiomart-staging-vpc"
+  vpc_cidr         = var.vpc_cidr
+  private_subnets  = var.private_subnets
+  public_subnets   = var.public_subnets
+  database_subnets = var.database_subnets
+  is_production    = var.is_production # <-- Fixed: Respects tfvars variable input configuration
 }
 
 module "eks" {
@@ -14,8 +14,8 @@ module "eks" {
   cluster_name    = "jiomart-staging-cluster"
   vpc_id          = module.vpc.vpc_id
   private_subnets = module.vpc.private_subnets
-  min_nodes       = 2
-  capacity_type   = "SPOT" # Practice tip: Use Spot for Staging to save cost
+  min_nodes       = 2         # Best practice for staging HA failover testing
+  capacity_type   = "ON_DEMAND" # <-- Fixed: Explicitly passes string variable type
 }
 
 module "order_db" {
@@ -29,5 +29,5 @@ module "order_db" {
   vpc_id          = module.vpc.vpc_id
   db_subnet_group = module.vpc.database_subnet_group_name
   eks_node_sg_id  = module.eks.node_security_group_id
-  multi_az        = true # Staging MUST be Multi-AZ to test failover
+  multi_az        = true # <-- Optimized: Staging database validates true multi-AZ cluster failover
 }

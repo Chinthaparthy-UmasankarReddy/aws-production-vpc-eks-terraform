@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "ap-south-1"
+  region = "ap-south-2"
 }
 
 # The S3 Bucket to store all .tfstate files

@@ -23,6 +23,7 @@ resource "aws_db_instance" "this" {
   password             = var.password
   db_subnet_group_name = var.db_subnet_group
   vpc_security_group_ids = [aws_security_group.db_sg.id]
-  multi_az             = true # Production High Availability
+  multi_az             = var.multi_az # <-- Fixed: Respects dev vs production boolean setting
+  #multi_az             = true # Production High Availability
   skip_final_snapshot  = true
 }

@@ -6,7 +6,7 @@ data "aws_iam_policy_document" "assume_role_policy" {
 
     condition {
       test     = "StringEquals"
-      variable = "${replace(module.eks.cluster_oidc_issuer_url, "https://", "")}:sub"
+      variable = "${module.eks.oidc_provider}:sub" # <-- Fixed: Uses standard pre-formatted output
       values   = ["system:serviceaccount:default:jiomart-app-sa"]
     }
 
